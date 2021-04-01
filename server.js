@@ -12,7 +12,7 @@ app.use(express.static('public'));
 const PORT = process.env.PORT || 5000;
 
 
-const mongoURI = "mongodb://localhost/practicing-react"
+const mongoURI = "mongodb://localhost/practicing-React"
 
 const db = process.env.MONGODB_URI || mongoURI
 

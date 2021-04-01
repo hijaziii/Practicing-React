@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Navbar, NavDropdown, Nav, Button } from 'react-bootstrap';
 import { logout } from '../../redux/Users/thunks';
+import { useHistory } from 'react-router-dom'
 
 const NavBar = (props) => {
+    const history = useHistory()
+    const authLinks = (
+        <Button variant="dark" onClick={() => { props.logout() }}>
+            LOGOUT
+        </Button>
+    );
+    const guestLinks = (
+        <Button variant="dark" onClick={() => { history.push('/login') }}>SIGN UP/ LOGIN</Button>
+    );
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -12,9 +22,7 @@ const NavBar = (props) => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                     </Nav>
-                    <Button variant="dark" onClick={() => { props.logout() }}>
-                        Logout
-                    </Button>
+                    <Fragment>{props.isAuthenticated ? authLinks : guestLinks}</Fragment>
                     <Nav>
                         <NavDropdown title="Projects" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">California Parking Services</NavDropdown.Item>
