@@ -1,0 +1,9 @@
+{
+  "mongoURI": "mongodb://localhost/lunde_water",
+  "jwtSecret": "mysecrettoken",
+  "STRIPE_SECRET_KEY": "sk_test_51H2jtGLvJwjuOr0RycKGhkT2ZzcZq9pkZfwNmUsSYhQhAr7c0Ay6MzmtW6kqU6lGJFItuNf6i24RQyqXoxpxYhyx00cOJYQMp2",
+  "STRIPE_PUBLIC_KEY": "pk_test_51H2jtGLvJwjuOr0RFQ9ynYIwYTgAr6HKAFQPLCLTcEFwK5psOGBFqP6OUFBa2uFrYjch2TKdvgae8NNg2ZnPoSY9008FFS3NB8",
+  "TSHEETS_BEARER_TOKEN": "Bearer S.16__56a70c8719bd350849b666c4a5cd5dd3a31a2cdc",
+  "MAIL_USER": "paglipay@gmail.com",
+  "MAIL_PASS": "P@ssw0rd"
+}
