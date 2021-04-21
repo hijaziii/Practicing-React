@@ -14,8 +14,9 @@ export const createUser = (auth) => ({
 });
 
 export const AUTH_ERROR = 'AUTH_ERROR';
-export const authError = () => ({
-    type: AUTH_ERROR
+export const authError = (auth) => ({
+    type: AUTH_ERROR,
+    payload: auth,
 
 });
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';

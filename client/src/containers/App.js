@@ -11,7 +11,7 @@ import NavBar from '../components/NavBar/NavBar';
 import HomePage from '../features/HomePage/HomePage';
 import Login from '../redux/Users/LoginRegister/Login';
 import Register from '../redux/Users/LoginRegister/Register';
-import LoginRegisterPage from '../features/LoginRegisterPage/LoginRegisterPage';
+import LoginRegisterPage from '../redux/Users/LoginRegister/LoginRegister';
 
 const App = () => {
   const initialState = { color: 'blue', data: [] };
