@@ -4,7 +4,6 @@ import {
     Row,
     Col,
     Card,
-    Alert,
     Tabs,
     Tab,
     Image,
@@ -14,24 +13,20 @@ const LoginRegisterPage = (props) => {
     console.log(props);
     return (
         <Container>
-            <Row>
-                {/* {props.err && props.err['errors'] ? props.err['errors'].map(e => <Alert key={e.msg} variant="danger">{e.msg}</Alert>) : null} */}
-            </Row>
             <Row className="mt-5">
-                <Col xs={6}>
-                    <Card style={{ height: '100%' }}>
-                        <Card.Header>Smart Developers</Card.Header>
+                <Col lg={6}>
+                    <Card style={{ height: '100%', color: 'blue' }} >
                         <Image variant="top" src="./Images/image.jpg" style={{ height: '100%' }} />
-                        <Card.Body>
-                            {/* {props.login} */}
-                            {/* {props.children} */}
-                        </Card.Body>
                     </Card>
                 </Col>
-                <Col xs={6}>
-                    <Tabs defaultActiveKey="Sign In" id="uncontrolled-tab-example">
+                <Col lg={6}>
+                    <Tabs
+                        defaultActiveKey="Sign In"
+                        id="uncontrolled-tab-example"
+                        onSelect={() => { props.clearAuthErr() }}
+                    >
                         <Tab eventKey="Sign In" title="Sign In">
-                            <Card >
+                            <Card>
                                 {/* <Card.Img variant="top" src="./Images/software.jpg" /> */}
                                 <Card.Body>
                                     {props.login}
@@ -40,7 +35,7 @@ const LoginRegisterPage = (props) => {
                             </Card>
                         </Tab>
                         <Tab eventKey="Register" title="Register">
-                            <Card >
+                            <Card>
                                 {/* <Card.Img variant="top" src="./Images/software.jpg" /> */}
                                 <Card.Body>
                                     {props.register}

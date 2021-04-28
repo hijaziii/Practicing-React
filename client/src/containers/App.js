@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Children, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddTax from '../components/AddTax';
 import ConfirmOrders from '../components/ConfirmOrders';
@@ -11,6 +11,7 @@ import NavBar from '../components/NavBar/NavBar';
 import HomePage from '../features/HomePage/HomePage';
 import Login from '../redux/Users/LoginRegister/Login';
 import Register from '../redux/Users/LoginRegister/Register';
+import JschemaForm from '../components/JschemaForm/JschemaForm';
 import LoginRegisterPage from '../redux/Users/LoginRegister/LoginRegister';
 
 const App = () => {
@@ -27,6 +28,9 @@ const App = () => {
           <Switch >
             <Route exact path='/aboutpage'>
               <AboutPage>
+                <JschemaForm />
+              </AboutPage>
+              <AboutPage>
                 <ContactForm />
               </AboutPage>
             </Route>
@@ -34,7 +38,9 @@ const App = () => {
             <Route exact path='/login'>
               <LoginRegisterPage
                 login={<Login />}
-                register={<Register />} />
+                register={<Register />}
+              />
+
             </Route>
 
             {/* <Route exact path='/register' component={Register} /> */}

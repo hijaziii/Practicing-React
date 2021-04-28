@@ -1,8 +1,7 @@
 /* eslint-disable no-unreachable */
-import React from 'react';
 import { connect } from 'react-redux';
 import LoginRegister from '../../../features/LoginRegisterPage/LoginRegisterPage';
-
+import { clearAuthErr } from '../thunks'
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +10,9 @@ const mapStateToProps = (state) => {
     };
 };
 const mapDispatchToProps = (dispatch) => {
+
     return {
+        clearAuthErr: () => dispatch(clearAuthErr())
     };
 };
 

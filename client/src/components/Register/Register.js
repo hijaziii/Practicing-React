@@ -3,10 +3,8 @@
 import { useHistory } from "react-router-dom";
 
 import React, {
-    // Fragment, 
     useState,
     useEffect,
-    // useRef
 } from 'react'
 import { Form, Button, Col, Alert } from 'react-bootstrap';
 
@@ -120,7 +118,7 @@ const Register = props => {
             <hr></hr>
             <Form onSubmit={submitHandler}>
                 <Form.Group controlId="formGridEmail">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>Email Address</Form.Label>
                     <Form.Control
                         // ref={emailElement}  Part of Clrearing input
                         isInvalid={state['errors'] && state['errors']['email']}
@@ -130,12 +128,12 @@ const Register = props => {
                         value={email}
                         onChange={onChange}
                         required />
-                    <Form.Text className="text-muted">
-                        Please enter a valid email address.
-                            {props.err && props.err['errors'] ? props.err['errors'].map(e => <Alert key={e.msg} variant="danger">{e.msg}</Alert>) : 'Email already exist.'}
-                    </Form.Text>
                 </Form.Group>
-
+                <Form.Text className="text-muted">
+                    Please enter a valid email address.
+                            {props.err && props.err['errors'] ? props.err['errors'].map(e => <Alert key={e.msg} variant="danger">{e.msg}</Alert>) : 'Email already exist.'}
+                </Form.Text>
+                <br />
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Form.Label>Password</Form.Label>
@@ -157,7 +155,7 @@ const Register = props => {
 
 
                     <Form.Group as={Col} controlId="formGridRepeat-Password">
-                        <Form.Label>Repeat Password</Form.Label>
+                        <Form.Label>Re-enter password</Form.Label>
                         <Form.Control
                             // ref={confirmPasswordElement}  Part of Clrearing input
                             isInvalid={state['errors'] && state['errors']['password']}
@@ -175,7 +173,6 @@ const Register = props => {
                     </Form.Text>
                 </Form.Row>
                 <br />
-
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>

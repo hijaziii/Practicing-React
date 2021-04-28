@@ -48,21 +48,10 @@ export const login = (state) => async (dispatch) => {
         console.log(JSON.stringify(err.response.data))
     });
 };
-// export const login = (email, password) => async (dispatch) => {
-//     const body = { email, password };
-//     console.log(body);
-//     try {
-//         const res = await api.post('/auth', body);
-//         console.log(res.data);
-//         dispatch(loginSuccess(res.data));
-//         dispatch(loadUser());
-//     } catch (err) {
-//         //const errors = err.response.data.errors;
-//         console.log(err);
 
-
-//     };
-// };
+export const clearAuthErr = () => async (dispatch) => {
+    dispatch(authError({}));
+};
 
 // Logout
 export const logout = () => async (dispatch) => {
